@@ -1,0 +1,38 @@
+/* Limpando o navegador, CSS Reset, iniciando margens com 0 */
+
+body, h1, h2, h3, h4, h5, h6{
+    margin:0;
+    padding:0;
+    outline:0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+/* Responsive Web Design */
+
+/* Mobile */
+
+body{
+    background-color: #333;
+    color:#e4e4e4
+}
+
+/* Quando a largura mínima for de 768px (celular deitado) aplique este CSS*/
+
+@media (min-width: 768px){
+    /* especificidade CSS= quanto mais específico o seletor (html,body)mais importante */
+    
+    html body{
+        background-color: unset;
+        color:initial; 
+        /* unset = desliga a cor do fundo.  
+        initial = cor do texto volta a ser valor inicial, preto */
+    }
+
+    body{
+        background:rgb(249, 210, 200);
+    }
+}
