@@ -1,2 +1,7 @@
+git config --global user.email "priscila.dalt@aluno.faculdadeimpacta.com.br"
+git config --global user.name "Priscila Da Dalt"
+
 git add --all
 git commit -m "Aula2"
+git push origin master
+
