@@ -1,14 +1,40 @@
 @import 'reset.css';
 
+/* exemplo de bootstrap 
+
+.text{
+    font-family: 'Roboto', 'Lato', sans-serif;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.text.small{
+    font-size: 0.6em;
+}
+
+.text.large{
+    font-size: 2em;
+}
+
+.text.x-large{
+    font-size: 4em;
+}
+class="text large" */
+
 .menu, .container, .details{
-    border: var(--border); /* var chama a variável do reset.css */
     height: 100vh;
+}
+
+.details{
+    border: var(--border); /* var chama a variável do reset.css */
+    
 }
 
 .menu{
     width: var(--menuWidth);
     border-color: #24FF00;
     flex-direction: column;
+    background-color: #F2F2F2;
 }
 
 .container{
@@ -43,6 +69,7 @@ body{
 
 .menu .header__img__profile{
     width: 20%;
+    padding-right: 5px;
 }
 
 .menu .menu__header__profile svg {
@@ -63,6 +90,7 @@ body{
     padding-left: 5%;
     border: none;
     background: none;
+    width: 150px;
 }
 
 .menu > .activity ul {
@@ -98,3 +126,80 @@ header.menu__header__profile > div {
     margin-top: 15px;
 }
 /* ------------------------------fim - menu - header ------------*/
+
+/* ------------------------------main - .container ------------------------------*/
+
+.container{
+    width: 100%;
+    height: inherit;
+    flex-direction: column;
+    
+    /* mobile first */
+    background: url('../images/bg-phone.jpg') center no-repeat;     
+    background-size: cover;
+}
+
+.container > header, 
+.container > footer {
+    height: 133px;
+    border:solid 1px red;
+}
+
+.container > section.tasks{
+    height: calc(100vh - (133px * 2));
+}
+
+.container > header {
+    width: 100%;
+    flex-direction: column;
+    color: #fff;
+    text-shadow: 0 0 2px #333;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.container > header > div:first-child{
+    margin-top:2%;
+    justify-content:space-between;
+}
+
+.container > header > div > div.icons > svg{
+    margin-left:10px;
+}
+
+.container footer form > label {
+    margin: 50px;
+    width: 200%;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.1);
+    
+}
+
+.container > footer> form>  label>  input{
+    padding-left: 5%;
+    border: none;
+    background: none;
+    width: 200px;
+    
+}
+
+/* tablet */
+@media (min-width: 768px){
+    .container{
+        background: url('../images/bg-tablet.jpg') center no-repeat;
+        background-size: cover;
+    }
+}
+
+/* desktop */
+@media (min-width: 1280px){
+    .container{
+        background: url('../images/bg-desktop.jpg') center no-repeat;
+        background-size: cover;
+    }
+}
+
+/* ------------------------------fim - main - .container ------------------------------*/
