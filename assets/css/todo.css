@@ -147,6 +147,7 @@ header.menu__header__profile > div {
 
 .container > section.tasks{
     height: calc(100vh - (133px * 2));
+    display:block;
 }
 
 .container > header {
@@ -185,6 +186,38 @@ header.menu__header__profile > div {
     width: 200px;
     
 }
+
+.task {
+    width: 90%;
+    margin: 2% 5%;
+    height: 60px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: rgba(240,240,240,0.8);
+    border-radius:5px;
+}
+
+.task :hover{
+    background: rgb(240,240,240);
+    cursor: pointer;
+}
+
+.task .checkbox {
+    float: left;
+    margin-left: 5px;
+}
+
+.task .tasks-list {
+    float: center;
+    margin-left: 5px;
+}
+
+.task .star {
+    float: right;
+    margin-left: 5px;
+}
+
 
 /* tablet */
 @media (min-width: 768px){

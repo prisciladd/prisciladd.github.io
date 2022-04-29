@@ -3,8 +3,27 @@
 // import {addTask} from './domFunctions.js';
 
 // CRUD
-export function addTask(){
-    alert("Cadastrando uma nova tarefa");
+export function addTask(db,title=""){
+    // criando uma nova tarefa
+    const task = document.createElement('div');
+    // const id = Number(db.lenght) + 1;
+    task.classList.add('task');
+    task.setAttribute('id', db.id);
+
+    const taskBody = `
+    <div><input type="checkbox" id="check_${db.id}" /></div>
+    <div>
+        <div><span class="title-task">${
+            // operador ternário. If de uma linha
+            // condição ? verdadeiro : falso
+            title?title:db.title}</span></div>
+        <div>
+    </div>
+    <div>Star</div>
+    `;
+
+    task.innerHTML = taskBody;
+    document.querySelector(".tasks").appendChild(task);
 }
 
 export function removeTask(){
@@ -15,8 +34,10 @@ export function updateTask(){
     alert("Alterando uma tarefa");
 }
 
-export function getAllTask(){
-    alert("Listando todas tarefas");
+export function getAllTasks(db){
+    db.forEach((item) => {
+        addTask(item);
+    });
 }
 
 export function getTaskById(){

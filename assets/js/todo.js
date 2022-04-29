@@ -26,11 +26,14 @@
 // ######################################################
 
 // Banco de dados NoSQL - Orientado a Documentos.
+// Estamos armazenando em memoria na const, quando dá f5 perde, em memoria é volátil.
+
+import{addTask, getAllTasks} from "./utils/domFunctions.js";
 
 const db = [
     {
         id: 1,
-        title: 'Estudar inglês EF',
+        title: 'Estudar inglês Roseta',
         steps: [
             {step: 'Concluir etapa 6'},
             {step: 'Concluir etapa 7'},
@@ -60,11 +63,18 @@ const db = [
 
 ];
 
-console.log(db[0].title);
+getAllTasks(db);
+
+// console.log(db[0].steps[2].step)
+// console.log(db[0].title);
+
+// DOM - é o JS acessando o HTML e manipulando ele
+// HTML é compilado pelo navegador em uma árvore de comandos, chamada DOM
 
 const newTask = document.querySelector("#inputTxtNewTask");
 const form = document.querySelector("#addNewTask");
 form.addEventListener("submit", (e) => {
+    // Form faz um favor? Pois não! Não faz nada...
     e.preventDefault();
 });
 
@@ -72,12 +82,20 @@ newTask.addEventListener ("keyup", (e) => {
     e.preventDefault(); //tira o comportamento padrão
     e.stopPropagation();
     if (e.key == "Enter") {
+        // Se newTask.value for contrário de True, ou seja se for falso, se estiver vazio
+        if(!newTask.value){
+            alert("Digite uma nova tarefa, para adicionar.");
+        } else{
         alert(newTask.value);
 
-        db.push({ id: Number(db.length) + 1, title: newTask.value});
+        const d = new Date();
+        const today = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
+        db.push({ id: Number(db.length) + 1, title: newTask.value, done:false, dueDate: today});
 
         newTask.value = "";
         console.log(db);
+        }
+        
     }
 });
 
