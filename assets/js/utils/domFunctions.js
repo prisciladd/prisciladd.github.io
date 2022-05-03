@@ -34,8 +34,9 @@ export function updateTask(){
     alert("Alterando uma tarefa");
 }
 
-export function getAllTasks(db){
-    db.forEach((item) => {
+// colocamos chocolate só para exemplificar que pode ser qualquer nome
+export function getAllTasks(chocolate){
+    chocolate.forEach((item) => {
         addTask(item);
     });
 }

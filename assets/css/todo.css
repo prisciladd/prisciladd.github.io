@@ -142,7 +142,7 @@ header.menu__header__profile > div {
 .container > header, 
 .container > footer {
     height: 133px;
-    border:solid 1px red;
+    /* border:solid 1px red; */
 }
 
 .container > section.tasks{
@@ -167,30 +167,33 @@ header.menu__header__profile > div {
 .container > header > div > div.icons > svg{
     margin-left:10px;
 }
-
-.container footer form > label {
-    margin: 50px;
-    width: 200%;
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.1);
-    
+footer form{
+    width: 95%;
 }
+footer form label  {
 
-.container > footer> form>  label>  input{
-    padding-left: 5%;
+    height: 50px;
+    display: flex;
+    align-items:center;
+    margin-left: 5%;
+    border-radius:5px;
+    background: rgba(240,240,240,0.9);
+}
+footer form label input  {
+    width: 90%;
+    height: 50%;
     border: none;
     background: none;
-    width: 200px;
-    
+}
+
+.tasks{
+    flex-direction: column;   
 }
 
 .task {
     width: 90%;
-    margin: 2% 5%;
-    height: 60px;
+    margin: 0.5% 5%;
+    height: 40px;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
@@ -202,23 +205,19 @@ header.menu__header__profile > div {
     background: rgb(240,240,240);
     cursor: pointer;
 }
-
-.task .checkbox {
-    float: left;
-    margin-left: 5px;
+.task ul{
+    width: 100%;
 }
 
-.task .tasks-list {
-    float: center;
-    margin-left: 5px;
+.checkbox{
+    width: 5%;
 }
 
-.task .star {
-    float: right;
-    margin-left: 5px;
+.wrap div{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
 }
-
-
 /* tablet */
 @media (min-width: 768px){
     .container{

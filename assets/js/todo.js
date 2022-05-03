@@ -86,12 +86,21 @@ newTask.addEventListener ("keyup", (e) => {
         if(!newTask.value){
             alert("Digite uma nova tarefa, para adicionar.");
         } else{
-        alert(newTask.value);
+        // alert(newTask.value);
 
         const d = new Date();
         const today = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
-        db.push({ id: Number(db.length) + 1, title: newTask.value, done:false, dueDate: today});
-
+        
+        db.push({ 
+            id: Number(db.length) + 1,
+            title: newTask.value, 
+            done:false, 
+            dueDate: today
+        });
+        
+        document.querySelector(".tasks").innerHTML="";
+        getAllTasks(db);
+        
         newTask.value = "";
         console.log(db);
         }

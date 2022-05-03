@@ -36,7 +36,9 @@
                             <option value="1">VW</option>
                         </select>
 
-                        <textarea class="form-control" name="message" rows="10" cols="20" placeholder="Mensagem"></textarea>
+                        <!-- onIput ao inputar algo no text area chama a função -->
+                        <textarea class="form-control" name="message" rows="10" cols="20" placeholder="Mensagem" 
+                        oninput="autoHeight(this)" id="message" style="overflow:hidden"   ></textarea>
                     </div>
 
                     <div class="form-group mb-3">
@@ -52,6 +54,14 @@
         </div>
     </div>    
     <script>
+        
+        function autoHeight(element){
+            // tamanho do text area começa com 20px
+            element.style.height = "20px"; 
+            // aumenta o tamanho de altura dinamicamente
+            element.style.height = (element.scrollHeight) + "px";
+        }
+
         const opcao = document.querySelectorAll("input[type='radio']");
         const btnSend = document.querySelector("#btn-send");
         
