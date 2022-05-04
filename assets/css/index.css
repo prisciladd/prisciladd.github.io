@@ -195,9 +195,9 @@ footer form label input  {
     margin: 0.5% 5%;
     height: 40px;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    background: rgba(240,240,240,0.8);
+    background: rgba(240,240,240,1);
     border-radius:5px;
 }
 
@@ -213,11 +213,18 @@ footer form label input  {
     width: 5%;
 }
 
-.wrap div{
+.task-title{
+    width: 95%;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
+    
 }
+
+.star{
+    margin-right:5px;
+}
+
 /* tablet */
 @media (min-width: 768px){
     .container{

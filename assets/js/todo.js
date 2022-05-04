@@ -28,38 +28,38 @@
 // Banco de dados NoSQL - Orientado a Documentos.
 // Estamos armazenando em memoria na const, quando dá f5 perde, em memoria é volátil.
 
-import{addTask, getAllTasks} from "./utils/domFunctions.js";
+import{getAllTasks} from "./utils/domFunctions.js";
 
 const db = [
-    {
-        id: 1,
-        title: 'Estudar inglês Roseta',
-        steps: [
-            {step: 'Concluir etapa 6'},
-            {step: 'Concluir etapa 7'},
-            {step: 'Concluir etapa 8'},
-            {step: 'Concluir etapa 9'},
-            {step: 'Concluir etapa 10'},
-        ],
-        done: false,
-        dueDate: '2022-05-06',
-        reminder: '2022-05-02 10:00',
+    // {
+    //     id: 1,
+    //     title: 'Estudar inglês Roseta',
+    //     steps: [
+    //         {step: 'Concluir etapa 6'},
+    //         {step: 'Concluir etapa 7'},
+    //         {step: 'Concluir etapa 8'},
+    //         {step: 'Concluir etapa 9'},
+    //         {step: 'Concluir etapa 10'},
+    //     ],
+    //     done: false,
+    //     dueDate: '2022-05-06',
+    //     reminder: '2022-05-02 10:00',
 
-    },
+    // },
 
-    {
-        id: 2,
-        title: 'Estudar para certificação',
-        steps: [
-            {step: 'Concluir learning path'},
-            {step: 'Ver vídeos do Rogerio'},
-            {step: 'Fazer simulados'},
-        ],
-        done: false,
-        dueDate: '2022-05-29',
-        reminder: '2022-05-15 10:00',
+    // {
+    //     id: 2,
+    //     title: 'Estudar para certificação',
+    //     steps: [
+    //         {step: 'Concluir learning path'},
+    //         {step: 'Ver vídeos do Rogerio'},
+    //         {step: 'Fazer simulados'},
+    //     ],
+    //     done: false,
+    //     dueDate: '2022-05-29',
+    //     reminder: '2022-05-15 10:00',
 
-    },
+    // },
 
 ];
 
@@ -107,6 +107,10 @@ newTask.addEventListener ("keyup", (e) => {
         
     }
 });
+
+
+
+
 
 // const frutas = ["maça","banana", "abacaxi", "abacate"];
 // console.log(frutas.at(-2));
