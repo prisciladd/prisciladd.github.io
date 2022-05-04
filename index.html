@@ -1,27 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Avanade - Projeto HTML5, CSS3, JS</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Uma lista de tarefas baseada no Microsoft ToDo"/>
+    <meta name="author" content="Priscila Da Dalt"/>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="assets/css/todo.css"/> 
 
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Avanade - Fiap - ToDo</title>
+
+    <!-- Isto é um comentário em HTML -->
+    <!-- Elementos de linha vs Elementos de Bloco -->
+    <!-- 
+        a - hyperlink
+        span - formatação de texto
+        i - italic
+        strong - negrito com importância, ou seja destaque
+        b - negrito.
+        ------------------------------
+        div - elemento de bloco sem importância semântica
+
+        elementos de bloco com importância semântica
+        section
+        header
+        footer
+        aside
+        nav
+        main
+        article
+
+
+        --------------------------------
+        texto
+        p
+        h1 - h6
+
+        --------------------------------
+        figure - figcaption - legenda numa imagem
+        picture - imagem responsiva
+        img - carrega uma imagem
+
+        --------------------------------
+        video
+        audio
+     -->
 </head>
-
 <body>
-    <div class="card" style="width:400px"> 
-        <div class="card-body">
-            <h1 class="card-title">Vai Corinthians!!!</h1>
-            
-            <h2 class="card-subtitle">O melhor time do mundo!!!</h2>
-            
-            <button type="button" class="btn btn-success btn-sm">Enviar</button>
-            
-            <button type="button" class="btn btn-outline-danger btn-sm">Deletar</button>
-        </div>
-    </div>
-    
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <section class="menu">
+        <header class="menu__header__profile"> <!-- Método BEM CSS forma de escrita menu__header__profile -->
+            <div>
+                <img src="assets/images/profile.png" alt="profile" class="header__img__profile">
+                <p>
+                    <strong>Priscila Da Dalt</strong>
+                    <span class="profile-email">priscila.da.dalt@avanade.com</span>
+                </p>
+            </div>
+            <div>
+                <form>
+                    <label for="busca">
+                        <input type="search" name="q" placeholder="Search"/> 
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="M16.292 17.5 11.125 12.333Q10.438 12.854 9.635 13.115Q8.833 13.375 7.958 13.375Q5.688 13.375 4.094 11.802Q2.5 10.229 2.5 7.958Q2.5 5.688 4.094 4.094Q5.688 2.5 7.958 2.5Q10.229 2.5 11.802 4.094Q13.375 5.688 13.375 7.958Q13.375 8.833 13.125 9.635Q12.875 10.438 12.333 11.104L17.5 16.292ZM7.958 11.625Q9.479 11.625 10.552 10.552Q11.625 9.479 11.625 7.958Q11.625 6.417 10.562 5.333Q9.5 4.25 7.958 4.25Q6.417 4.25 5.333 5.333Q4.25 6.417 4.25 7.958Q4.25 9.5 5.333 10.562Q6.417 11.625 7.958 11.625Z"/></svg>
+                    </label>
+                </form>
+            </div>
+        </header>
+        <div class="activity">
+            <ul>
+                <li> 
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.9619 12.6027C16.9619 15.1825 14.8705 17.2738 12.2907 17.2738C9.71096 17.2738 7.61963 15.1825 7.61963 12.6027C7.61963 10.0229 9.71096 7.93158 12.2907 7.93158C14.8705 7.93158 16.9619 10.0229 16.9619 12.6027Z" stroke="#979797"/>
+                    <line y1="-0.5" x2="4.55689" y2="-0.5" transform="matrix(-0.625412 0.780294 -0.780297 -0.62541 20.511 3.5777)" stroke="#979797"/>
+                    <line y1="-0.5" x2="4.55689" y2="-0.5" transform="matrix(0.625412 0.780294 0.780297 -0.62541 4.07056 3.5777)" stroke="#979797"/>
+                    <line x1="12.7908" y1="0.602661" x2="12.7908" y2="5.15955" stroke="#979797"/>
+                    <line y1="-0.5" x2="4.55689" y2="-0.5" transform="matrix(-4.5055e-07 -1 -1 4.24078e-09 12.2908 24.6027)" stroke="#979797"/>
+                    <line x1="0.288881" y1="12.1481" x2="4.8458" y2="12.1308" stroke="#979797"/>
+                    <line y1="-0.5" x2="4.55696" y2="-0.5" transform="matrix(-0.999993 0.00378187 0.0037819 0.999993 24.2908 12.5573)" stroke="#979797"/>
+                    <line y1="-0.5" x2="4.55689" y2="-0.5" transform="matrix(-0.625412 -0.780294 -0.780297 0.62541 20.511 21.6277)" stroke="#979797"/>
+                    <line y1="-0.5" x2="4.55689" y2="-0.5" transform="matrix(0.625412 -0.780294 0.780297 0.62541 4.07056 21.6277)" stroke="#979797"/>
+                    </svg>
+                    
+                    Meu Dia 
+                </li>
 
+                <li> 
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.7754 3.56771L15.3897 8.52265L15.5044 8.74009L15.7466 8.78201L21.2669 9.73715L17.3623 13.7546L17.191 13.9309L17.226 14.1743L18.0234 19.7195L12.996 17.2475L12.7754 17.139L12.5548 17.2475L7.52734 19.7195L8.32481 14.1743L8.3598 13.9309L8.18845 13.7546L4.28387 9.73715L9.80415 8.78201L10.0464 8.74009L10.1611 8.52265L12.7754 3.56771Z" stroke="#D59CAE"/>
+                    </svg>
+
+                    Importante 
+                </li>
+
+                <li> 
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.722412" y="1.14191" width="23" height="23" rx="4.5" stroke="#8AB7B5"/>
+                    <line x1="6.69482" y1="4.62347" x2="6.69482" y2="19.8862" stroke="#8AB7B5"/>
+                    <line x1="12.1143" y1="4.62347" x2="12.1143" y2="19.8862" stroke="#8AB7B5"/>
+                    <line x1="17.5334" y1="4.62347" x2="17.5334" y2="19.8862" stroke="#8AB7B5"/>
+                    </svg>
+
+                    Planejado
+                </li>
+
+                <li> 
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.17627 15.7707H19.9834V16.8951C19.968 16.9143 19.951 16.9355 19.9322 16.9586C19.83 17.0844 19.6778 17.2659 19.4809 17.4846C19.0866 17.9226 18.5159 18.5062 17.8118 19.0887C16.3895 20.2652 14.4903 21.3809 12.4361 21.3809C10.0531 21.3809 8.22869 20.2584 6.98252 19.1067C6.36048 18.5319 5.8899 17.9561 5.57543 17.5246C5.41845 17.3093 5.30111 17.1309 5.2239 17.0079C5.20581 16.9791 5.18992 16.9533 5.17627 16.9309V15.7707Z" stroke="#94BBAA"/>
+                    <circle cx="12.7896" cy="8.68923" r="4.86476" stroke="#94BBAA"/>
+                    </svg>
+
+                    Atribuído a mim
+                </li>
+
+                <li>
+                        <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.6 29H6.4C5.73333 29 5.16667 28.7789 4.7 28.3368C4.23333 27.8947 4 27.3579 4 26.7263V7.27368C4 6.64211 4.23333 6.10526 4.7 5.66316C5.16667 5.22105 5.73333 5 6.4 5H17L24 11.6316V26.7263C24 27.3579 23.7667 27.8947 23.3 28.3368C22.8333 28.7789 22.2667 29 21.6 29ZM16 12.5789V6.89474H6.4C6.31111 6.89474 6.22222 6.93684 6.13333 7.02105C6.04444 7.10526 6 7.18947 6 7.27368V26.7263C6 26.8105 6.04444 26.8947 6.13333 26.9789C6.22222 27.0632 6.31111 27.1053 6.4 27.1053H21.6C21.6889 27.1053 21.7778 27.0632 21.8667 26.9789C21.9556 26.8947 22 26.8105 22 26.7263V12.5789H16ZM12.6 23.8526L19.6667 17.1579L18.2333 15.8L12.5667 21.1368L9.76667 18.4526L8.33333 19.8105L12.6 23.8526ZM6 6.89474V12.5789V26.7263V7.27368C6 7.18947 6 7.10526 6 7.02105C6 6.93684 6 6.89474 6 6.89474Z" fill="black" fill-opacity="0.6"/>
+                        </svg>
+
+                    Tarefas
+                </li>
+            </ul>
+        </div>
+    </section>
+    <main class="container">
+        <header>
+            <div>
+                <h1>Meu Dia</h1>
+                <div class="icons">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_b_53_8)">
+                        <rect width="24" height="24" rx="4" fill="white"/>
+                        </g>
+                        <path d="M19.3689 9.97516L19.3196 9.86025L19.2427 9.68104L19.0648 9.60123L18.9214 9.53692L19.0716 9.46685L19.2428 9.38695L19.3184 9.21378L19.3689 9.09804L19.4243 9.22017L19.4998 9.38686L19.6651 9.46538L19.8158 9.53695L19.672 9.60261L19.5 9.68116L19.423 9.85391L19.3689 9.97516ZM17 6.7931L16.6745 6.08443L16.5993 5.92048L16.4366 5.84237L15.7146 5.49555L16.4369 5.1482L16.5993 5.07007L16.6745 4.90624L17 4.19757L17.3259 4.90646L17.4011 5.07012L17.5635 5.1482L18.2857 5.49555L17.5637 5.84237L17.4012 5.92042L17.3259 6.08422L17 6.7931ZM5.08935 6.77419L5.08944 6.77409C6.14636 5.68053 7.439 5.13672 9 5.13672C10.5317 5.13672 11.8158 5.67887 12.8819 6.77518C13.9467 7.87027 14.4798 9.20573 14.4798 10.8135C14.4798 11.8476 14.2312 12.7951 13.7352 13.6655L13.7351 13.6656C13.2606 14.4986 12.6234 15.1661 11.8184 15.6733H6.16155C5.35711 15.1661 4.71979 14.4986 4.24465 13.6655C3.7486 12.7951 3.5 11.8476 3.5 10.8135C3.5 9.20488 4.03054 7.8691 5.08935 6.77419ZM6.2464 14.8595L6.37789 14.9551H6.54048H11.4595H11.6221L11.7536 14.8595C12.4148 14.3786 12.9261 13.7862 13.2776 13.0832L13.2779 13.0827C13.6271 12.3822 13.7998 11.6233 13.7998 10.8135C13.7998 9.44912 13.3408 8.27073 12.4221 7.30861L12.0605 7.6539L12.4221 7.30861C11.4995 6.34233 10.348 5.85493 9 5.85493C7.65211 5.85493 6.4982 6.34221 5.56963 7.30722C4.64348 8.26905 4.18 9.44789 4.18 10.8135C4.18 11.6251 4.35706 12.3854 4.71454 13.0867L4.71464 13.0869C5.07237 13.7879 5.58598 14.3792 6.2464 14.8595ZM9 20.5C8.69674 20.5 8.44824 20.396 8.22759 20.1703C8.13414 20.0748 8.06126 19.9734 8.00819 19.8643H9.97517C9.92294 19.9753 9.85101 20.078 9.75887 20.1744C9.54601 20.3965 9.30279 20.5 9 20.5ZM6.30032 18.1279V17.4097H11.6795V18.1279H6.30032Z" fill="black" stroke="black"/>
+                        <defs>
+                        <filter id="filter0_b_53_8" x="-4" y="-4" width="32" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feGaussianBlur in="BackgroundImage" stdDeviation="2"/>
+                        <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_53_8"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_53_8" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                        
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.95 13.9C5.4172 13.9 4.9588 13.7084 4.5748 13.3252C4.1916 12.942 4 12.4836 4 11.95C4 11.4164 4.1916 10.958 4.5748 10.5748C4.9588 10.1916 5.4172 10 5.95 10C6.4836 10 6.942 10.1916 7.3252 10.5748C7.7084 10.958 7.9 11.4164 7.9 11.95C7.9 12.4836 7.7084 12.942 7.3252 13.3252C6.942 13.7084 6.4836 13.9 5.95 13.9ZM12.0004 13.9C11.4668 13.9 11.0084 13.7084 10.6252 13.3252C10.242 12.942 10.0504 12.4836 10.0504 11.95C10.0504 11.4164 10.242 10.958 10.6252 10.5748C11.0084 10.1916 11.4668 10 12.0004 10C12.534 10 12.9924 10.1916 13.3756 10.5748C13.7588 10.958 13.9504 11.4164 13.9504 11.95C13.9504 12.4836 13.7588 12.942 13.3756 13.3252C12.9924 13.7084 12.534 13.9 12.0004 13.9ZM18.0508 13.9C17.5172 13.9 17.0588 13.7084 16.6756 13.3252C16.2924 12.942 16.1008 12.4836 16.1008 11.95C16.1008 11.4164 16.2924 10.958 16.6756 10.5748C17.0588 10.1916 17.5172 10 18.0508 10C18.5836 10 19.042 10.1916 19.426 10.5748C19.8092 10.958 20.0008 11.4164 20.0008 11.95C20.0008 12.4836 19.8092 12.942 19.426 13.3252C19.042 13.7084 18.5836 13.9 18.0508 13.9Z" fill="white"/>
+                    </svg>                 
+                </div>
+            </div>
+            <div><span id="dateToday">quarta-feira, 27 de abril de 2022</span></div>
+        </header>
+        <section class="tasks">
+            <div class="allDone"></div>
+            
+            
+            <div class="task" id="1">
+                <ul>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" id="check_1" />
+                        </div>
+                        <div class="wrap">
+                            <div><span class="title-task">Estudar Inglês EF</span></div>
+                            <div class="tasks-list">
+                                <ul>
+                                    <li>Tarefas</li>
+                                    <li class="list-disc">0 de 4</li>
+                                    <li class="dueDate">Hoje</li>
+                                    <li class="list-disc">Attached</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="star">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="M10 10.667ZM4.854 18.333 6.792 12 1.667 8.333H8L10 1.667L12 8.333H18.333L13.208 12L15.146 18.333L10 14.417ZM8.167 13.667 10 12.208 11.833 13.667 11.167 11.292 12.896 10.104H10.729L10 7.688L9.271 10.104H7.104L8.833 11.292Z"/></svg>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <form id="addNewTask">
+                <label for="inputTxtNewTask">
+                    
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.6765 35.4155V26.739H15V23.6765H23.6765V15H26.739V23.6765H35.4155V26.739H26.739V35.4155H23.6765Z" fill="black"/>
+                        </svg>
+                    <input type="text" id="inputTxtNewTask" placeholder="Adicionar uma tarefa"/>
+                    
+                </label>
+            </form>
+        </footer>
+    </main>
+    <section class="details">
+
+    </section>
+    <script type="module" src="assets/js/todo.js"></script>
 </body>
 </html>
